@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CREAR MATERIA</title>
+</head>
+<body>
+    <h1>NUEVA MATERIA</h1>
+    <form th:action="@{/materias}" th:object="${materia}" method="post">
+        <label>NOMBRE DE LA MATERIA: </label>
+        <br>
+        <input type="text" th:field="*{nombre}" required>
+        <br>
+        <label>CREDITOS: </label>
+        <br>
+        <input type="number" th:field="*{creditos}">
+        <br>
+        <br>
+        <input type="submit" value="GUARDAR">
+        <a th:href="@{/materias}">CANCELAR</a>
+    </form>
+</body>
+</html>

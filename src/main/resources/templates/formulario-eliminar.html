@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ELIMINAR MATERIA</title>
+</head>
+<body>
+    <h1>ELIMINAR MATERIA</h1>
+    <h3>¿ESTAS SEGURO QUE DESEAS ELIMINAR LA MATERIA?</h3>
+    <h4>RECUERDA QUE UNA VEZ ELIMINADA NO PODRAS RECUPERAR LOS DATOS</h4>
+    <form th:action="@{/materias/eliminar}" th:object="${materia}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <label>NOMBRE DE LA MATERIA: </label>
+        <br>
+        <input type="text" th:field="*{nombre}" required>
+        <br>
+        <label>CREDITOS: </label>
+        <br>
+        <input type="number" th:field="*{creditos}">
+        <br>
+        <br>
+        <input type="submit" value="ELIMINAR">
+        <a th:href="@{/materias}">CANCELAR</a>
+    </form>
+</body>
+</html>
