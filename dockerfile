@@ -4,5 +4,5 @@ COPY . .
 RUN chmod +x mvnw
 RUN ./mvnw clean install -DskipTests
 EXPOSE 8080
-# Cambiamos la forma de ejecutar el JAR para que sea más flexible con el nombre
+
 ENTRYPOINT ["sh", "-c", "java -jar target/*.jar"]
